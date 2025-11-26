@@ -1,0 +1,23 @@
+{
+  "notes": "This folder contains cleaned data, visualizations, model artifacts and a report. Use these assets in your portfolio.",
+  "files": [
+    "a.csv",
+    "analysis.py",
+    "app.py",
+    "avg_salary_by_category.png",
+    "cleaned_full.csv",
+    "cleaned_sample_200.csv",
+    "clf_jobcat.pkl",
+    "cluster_examples.csv",
+    "eda_analysis.py",
+    "gender_distribution.png",
+    "jobs_by_location.png",
+    "labelenc_jobcat.pkl",
+    "lgb_salary_model.pkl",
+    "pipeline_report.json",
+    "salary_distribution.png",
+    "tempCodeRunnerFile.py",
+    "tfidf_jobtitle.pkl",
+    "upgrad_analysis.py"
+  ]
+}

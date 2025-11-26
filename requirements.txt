@@ -1,0 +1,10 @@
+numpy
+pandas
+scikit-learn
+seaborn
+matplotlib
+plotly
+gradio
+joblib
+json
+re
