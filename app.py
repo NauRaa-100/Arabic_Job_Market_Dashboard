@@ -69,7 +69,7 @@ def predict_salary(job_title, experience, gender, category):
     }])
 
     pred = gbm.predict(row)[0]
-    return round(pred, 2)  # <-- تقريب لرقمين عشريين
+    return round(pred, 2)  
 
 # ---------------------------------------------------
 # Charts using Plotly for interactive zoom
@@ -88,87 +88,12 @@ def chart_salary():
     return fig
 
 # ---------------------------------------------------
-# Custom CSS for styling the interactive website
+# Gradio App
 # ---------------------------------------------------
-custom_css = """
-/* Overall body styling */
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
 
-/* Header styling */
-h1 {
-    text-align: center;
-    color: #fff;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
+with gr.Blocks(title="Arabic Jobs Market Dashboard") as demo:
 
-/* Tab styling */
-.tab {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Button styling */
-.gr-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.gr-button:hover {
-    background-color: #45a049;
-}
-
-/* Input fields styling */
-.gr-textbox, .gr-dropdown, .gr-number, .gr-radio {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* Plot styling for interactive charts */
-.plotly-graph-div {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em;
-    }
-    .tab {
-        padding: 10px;
-    }
-}
-"""
-
-with gr.Blocks(title="Job Market Dashboard", css=custom_css) as demo:
-
-    gr.Markdown("# 🌍 Job Market Dashboard")
-
+    gr.Markdown("# 🌍 Arabic Jobs Market Dashboard")
 
     with gr.Tab("📊 Charts"):
         gr.Plot(chart_locations)
@@ -176,7 +101,7 @@ with gr.Blocks(title="Job Market Dashboard", css=custom_css) as demo:
 
     with gr.Tab("🧠 Suggest Job Categories"):
         jt = gr.Dropdown(label="اكتب عنوان الوظيفة", choices=job_titles, interactive=True)
-        out_sg = gr.JSON(label="اقتراحات مبنية على الموديل + المابات")
+        out_sg = gr.JSON(label="اقتراحات مبنية على الموديل ")
         gr.Button("اقترح").click(suggest_categories, jt, out_sg)
 
     with gr.Tab("🗂 Predict Job Category"):
