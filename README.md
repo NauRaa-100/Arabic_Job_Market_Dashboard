@@ -15,6 +15,10 @@ It includes:
 
 This project simulates real company-level work, combining data engineering, ML pipelines, and UI deployment.
 
+
+##Live
+You Can Visit 
+https://huggingface.co/spaces/NauRaa/Arabs_jobs_Dashboard
 ---
 
 ## Project Structure
